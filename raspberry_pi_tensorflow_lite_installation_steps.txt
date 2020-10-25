@@ -1,0 +1,19 @@
+# install system pip, numpy dependencies, and virtualenv
+sudo apt-get install python3-pip python3-dev libatlas-base-dev virtualenv
+
+# at this point i tried to install tensorflow directly via pip, which does NOT work
+# sudo pip3 install --upgrade tensorflow
+
+# created virtualenv environment instead
+virtualenv --system-site-packages -p python3 ./venv
+
+# activate virtual environment "venv"
+# note: after this command your shell prompt will be prefixed with "(venv) "
+source ./venv/bin/activate
+
+# install tensorflow (i also installed keras here, because I use it for other stuff)
+# note: this step takes a comically long time (>1 hour)
+pip install tensorflow keras
+
+##------------This Link--------
+https://pablotron.org/2019/04/06/tensorflow-on-a-raspberry-pi-zero-w-is-a-bad-idea.html
